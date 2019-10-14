@@ -1,0 +1,15 @@
+body{
+    background-color:#ffc600;
+}
+.container{
+   
+    height: 50px;
+    max-width: 479px;
+    margin: 50px auto;
+    position: relative;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    background-size: 100% 3rem;
+    background-color: white;
+    line-height: 3rem;
+    border-radius: 4px;
+}

@@ -1,0 +1,55 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Konami Key Sequence Detection</title>
+        <link rel="stylesheet" href="index.css">
+        <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+    </head>
+    <body>
+        <div class="container" contenteditable></div>
+        <div class="container2" contenteditable></div>
+        <style>
+            .pTag{
+                color: white;
+                font-size: 50px;;
+                font-weight: 30px;
+
+            }
+        </style>
+            
+        <script>
+            //get data
+
+            //create an empty arrray 
+            let keyDowns = [] ;
+            let seceretCode = 'wesbos';
+
+
+
+            //functions
+          //push the key pressed into the array
+            function Handler(e){
+                console.log(keyDowns);
+                keyDowns.push(e.key);
+                keyDowns.splice(-seceretCode.length-1, keyDowns.length-seceretCode.length);
+                console.log(keyDowns);
+                
+                //write a condtion to console ding when the is a match for the secret code
+                //join() turns an array into a string [W,E,B,O,S] to 'WEBOS'
+                if(keyDowns.join('').includes(seceretCode)){
+                    
+                    console.log('DING! DING!');
+                    cornify_add();
+
+                }
+               
+            }
+
+
+
+            //event listner
+            window.addEventListener('keyup', Handler);
+        </script>
+
+    </body>
+</html>
